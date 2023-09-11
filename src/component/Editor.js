@@ -3,15 +3,8 @@ import { useEffect, useState } from "react";
 import Quill from "quill";
 import "quill/dist/quill.snow.css";
 
-import { Box } from "@mui/material";
-import styled from "@emotion/styled";
-
 import { io } from "socket.io-client";
 import { useParams } from "react-router-dom";
-
-const Component = styled.div`
-  background: #f5f5f5;
-`;
 
 const toolbarOptions = [
   ["bold", "italic", "underline", "strike"], // toggled buttons
@@ -111,12 +104,12 @@ const Editor = () => {
     };
   }, [socket, quill]);
   return (
-    <Component>
-      <Box
+    <div className="bg-[#f5f5f5]">
+      <div
         className="w-3/5 bg-white min-h-screen container"
         id="container"
-      ></Box>
-    </Component>
+      ></div>
+    </div>
   );
 };
 
